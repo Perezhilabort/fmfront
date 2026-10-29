@@ -16,7 +16,7 @@ export function useMenu() {
         setError(null);
 
         axios
-            .get(API_URL, {
+            .get("https://fmmenuserver.onrender.com/", {
                 params: { lang },
                 signal: controller.signal,
             })
