@@ -1,0 +1,40 @@
+{
+  "loading": "Menü yükleniyor…",
+  "error": "Menü yüklenemedi. Bağlantınızı kontrol edip sayfayı yenileyin.",
+  "menu": {
+    "categories": "Kategoriler",
+    "language": "Dil"
+  },
+  "allergens": {
+    "label": "Alerjenler",
+    "gluten": "Gluten",
+    "crustaceans": "Kabuklular",
+    "eggs": "Yumurta",
+    "fish": "Balık",
+    "peanuts": "Yer fıstığı",
+    "soy": "Soya",
+    "milk": "Süt",
+    "nuts": "Kuruyemiş",
+    "celery": "Kereviz",
+    "mustard": "Hardal",
+    "sesame": "Susam",
+    "sulphites": "Sülfitler",
+    "lupin": "Acı bakla",
+    "molluscs": "Yumuşakçalar",
+    "shellfish": "Deniz ürünleri",
+    "honey": "Bal"
+  },
+  "cart": {
+    "open": "Sepet",
+    "title": "Siparişiniz",
+    "total": "Toplam",
+    "clear": "Temizle",
+    "showCashier": "Kasiyere göster",
+    "close": "Kapat",
+    "back": "Geri",
+    "increase": "Bir tane daha ekle",
+    "decrease": "Bir tane çıkar",
+    "add": "Sepete ekle",
+    "cashierHint": "Bu ekranı kasiyere gösterin"
+  }
+}

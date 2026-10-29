@@ -1,0 +1,40 @@
+{
+  "loading": "菜单加载中…",
+  "error": "无法加载菜单。请检查网络连接后刷新页面。",
+  "menu": {
+    "categories": "分类",
+    "language": "语言"
+  },
+  "allergens": {
+    "label": "过敏原",
+    "gluten": "麸质",
+    "crustaceans": "甲壳类",
+    "eggs": "鸡蛋",
+    "fish": "鱼",
+    "peanuts": "花生",
+    "soy": "大豆",
+    "milk": "牛奶",
+    "nuts": "坚果",
+    "celery": "芹菜",
+    "mustard": "芥末",
+    "sesame": "芝麻",
+    "sulphites": "亚硫酸盐",
+    "lupin": "羽扇豆",
+    "molluscs": "软体动物",
+    "shellfish": "海鲜",
+    "honey": "蜂蜜"
+  },
+  "cart": {
+    "open": "购物车",
+    "title": "您的订单",
+    "total": "合计",
+    "clear": "清空",
+    "showCashier": "出示给收银员",
+    "close": "关闭",
+    "back": "返回",
+    "increase": "再加一份",
+    "decrease": "减少一份",
+    "add": "加入购物车",
+    "cashierHint": "请向收银员出示此屏幕"
+  }
+}

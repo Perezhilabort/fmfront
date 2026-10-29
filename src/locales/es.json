@@ -1,0 +1,40 @@
+{
+  "loading": "Cargando el menú…",
+  "error": "No se pudo cargar el menú. Comprueba tu conexión y recarga la página.",
+  "menu": {
+    "categories": "Categorías",
+    "language": "Idioma"
+  },
+  "allergens": {
+    "label": "Alérgenos",
+    "gluten": "Gluten",
+    "crustaceans": "Crustáceos",
+    "eggs": "Huevos",
+    "fish": "Pescado",
+    "peanuts": "Cacahuetes",
+    "soy": "Soja",
+    "milk": "Leche",
+    "nuts": "Frutos secos",
+    "celery": "Apio",
+    "mustard": "Mostaza",
+    "sesame": "Sésamo",
+    "sulphites": "Sulfitos",
+    "lupin": "Altramuces",
+    "molluscs": "Moluscos",
+    "shellfish": "Marisco",
+    "honey": "Miel"
+  },
+  "cart": {
+    "open": "Carrito",
+    "title": "Tu pedido",
+    "total": "Total",
+    "clear": "Vaciar",
+    "showCashier": "Mostrar al cajero",
+    "close": "Cerrar",
+    "back": "Volver",
+    "increase": "Añadir uno más",
+    "decrease": "Quitar uno",
+    "add": "Añadir al carrito",
+    "cashierHint": "Muestra esta pantalla al cajero"
+  }
+}

@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=PT+Sans:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* ---------- Палитра взята из шапки Flavour Market ---------- */
+:root {
+  --paper: #FCF8F2;        /* фон страницы (поля вокруг шапки) */
+  --cream: #F8EBDB;        /* тёплый крем из градиента шапки */
+  --espresso: #3A2011;     /* основной текст, как «Flavour Market» */
+  --cocoa: #6B4A33;        /* второстепенный текст */
+  --copper: #B07A4F;       /* тонкие линии, как рамка шапки */
+  --copper-deep: #8A552F;  /* цены и акценты (контраст ≥ 4.5:1) */
+  --olive: #55633A;        /* листья оливы из шапки */
+  --olive-tint: #EEF0E2;
+  --line: rgba(176, 122, 79, 0.35);
+
+  --font-display: 'Playfair Display', 'PT Serif', 'Noto Sans Devanagari', 'Noto Sans SC', Georgia, serif;
+  --font-body: 'PT Sans', 'Noto Sans Devanagari', 'Noto Sans SC', system-ui, sans-serif;
+
+  --nav-offset: 4rem;      /* высота липкой ленты категорий на телефоне */
+}
+@media (min-width: 900px) {
+  :root { --nav-offset: 1.5rem; }
+}
+
+/* ---------- База ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--espresso);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 2px solid var(--copper-deep); outline-offset: 2px; }
+
+/* ---------- Шапка ---------- */
+.site-header { max-width: 1280px; margin: 0 auto; padding: 0.75rem 0.75rem 0; }
+.site-header img {
+  display: block;
+  width: 100%;
+  height: 7.5rem;               /* на телефоне обрезаем до логотипа и названия */
+  object-fit: cover;
+  object-position: left center;
+  border-radius: 1.25rem;
+}
+@media (min-width: 720px) {
+  .site-header img { height: auto; object-fit: initial; }
+}
+
+/* ---------- Верхняя строка с языком ---------- */
+.topbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.lang select {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--espresso);
+  font: inherit;
+  cursor: pointer;
+}
+.lang select:hover { border-color: var(--copper); }
+
+/* ---------- Раскладка: категории + меню ---------- */
+.layout { max-width: 1200px; margin: 0 auto; }
+
+/* Телефон: категории — липкая горизонтальная лента сверху */
+.cat-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.cat-nav::-webkit-scrollbar { display: none; }
+.cat-nav a {
+  flex: none;
+  padding: 0.4rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--cocoa);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+.cat-nav a:hover { background: var(--cream); border-color: var(--copper); color: var(--espresso); }
+.cat-nav a[aria-current] { background: var(--espresso); border-color: var(--espresso); color: var(--paper); }
+
+/* Компьютер: категории — липкая колонка слева */
+@media (min-width: 900px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+  .cat-nav {
+    top: 1.5rem;
+    align-self: start;
+    flex-direction: column;
+    gap: 0.15rem;
+    max-height: calc(100vh - 3rem);
+    margin-top: 2rem;
+    padding: 0;
+    overflow-x: visible;
+    overflow-y: auto;
+    background: none;
+    backdrop-filter: none;
+    border-bottom: 0;
+    border-left: 1px solid var(--line);
+  }
+  .cat-nav a {
+    padding: 0.55rem 1rem;
+    margin-left: -1px;
+    border: 0;
+    border-left: 2px solid transparent;
+    border-radius: 0;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    white-space: normal;
+  }
+  .cat-nav a:hover { background: var(--cream); border-left-color: var(--copper); }
+  .cat-nav a[aria-current] {
+    background: var(--cream);
+    border-left-color: var(--copper-deep);
+    color: var(--espresso);
+    font-weight: 700;
+  }
+}
+
+/* ---------- Меню ---------- */
+.menu { padding: 0 1rem 4rem; transition: opacity 0.2s; }
+@media (min-width: 900px) { .menu { padding: 0 0 4rem; } }
+.menu.is-loading { opacity: 0.45; }
+.menu__status { padding: 3rem 0; text-align: center; color: var(--cocoa); }
+
+.cat { padding-top: 2.5rem; scroll-margin-top: var(--nav-offset); }
+.cat__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--espresso);
+}
+.cat__title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--copper), transparent);
+}
+
+.dishes { display: grid; grid-template-columns: 1fr; gap: 1.75rem 3rem; }
+@media (min-width: 1100px) {
+  .dishes { grid-template-columns: 1fr 1fr; }
+}
+
+.dish { display: flex; gap: 1rem; }
+.dish__img {
+  flex: none;
+  width: 5.5rem;
+  height: 5.5rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  background: var(--cream);
+}
+.dish__body { flex: 1; min-width: 0; }
+.dish__head { display: flex; align-items: baseline; gap: 0.5rem; }
+.dish__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--espresso);
+}
+.dish__leader {
+  flex: 1;
+  min-width: 1rem;
+  border-bottom: 1px dotted var(--copper);
+  transform: translateY(-0.25em);
+}
+.dish__price {
+  flex: none;
+  font-weight: 700;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--copper-deep);
+  white-space: nowrap;
+}
+.dish__desc { margin: 0.25rem 0 0; max-width: 60ch; font-size: 0.95rem; color: var(--cocoa); }
+
+.dish__allergens { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.6rem 0 0; padding: 0; list-style: none; }
+.dish__allergens li {
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: var(--olive-tint);
+  color: var(--olive);
+  font-size: 0.78rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .menu, .cat-nav a { transition: none; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

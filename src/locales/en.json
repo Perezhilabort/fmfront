@@ -1,0 +1,40 @@
+{
+  "loading": "Loading menu…",
+  "error": "Couldn't load the menu. Check your connection and refresh the page.",
+  "menu": {
+    "categories": "Categories",
+    "language": "Language"
+  },
+  "allergens": {
+    "label": "Allergens",
+    "gluten": "Gluten",
+    "crustaceans": "Crustaceans",
+    "eggs": "Eggs",
+    "fish": "Fish",
+    "peanuts": "Peanuts",
+    "soy": "Soy",
+    "milk": "Milk",
+    "nuts": "Nuts",
+    "celery": "Celery",
+    "mustard": "Mustard",
+    "sesame": "Sesame",
+    "sulphites": "Sulphites",
+    "lupin": "Lupin",
+    "molluscs": "Molluscs",
+    "shellfish": "Shellfish",
+    "honey": "Honey"
+  },
+  "cart": {
+    "open": "Cart",
+    "title": "Your order",
+    "total": "Total",
+    "clear": "Clear",
+    "showCashier": "Show to cashier",
+    "close": "Close",
+    "back": "Back",
+    "increase": "Add one more",
+    "decrease": "Remove one",
+    "add": "Add to cart",
+    "cashierHint": "Show this screen to the cashier"
+  }
+}
