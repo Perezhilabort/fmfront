@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const API_URL ="https://fmmenuserver.onrender.com/api";
 const TOKEN_KEY = 'admin_token';
 
 export const getToken = () => {
