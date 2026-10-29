@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL ="https://fmmenuserver.onrender.com/api";
+const API_URL ="https://fmmenuserver.onrender.com/api/admin";
 const TOKEN_KEY = 'admin_token';
 
 export const getToken = () => {
