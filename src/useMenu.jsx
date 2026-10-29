@@ -5,7 +5,7 @@ import axios from 'axios';
 export function useMenu() {
     const { i18n } = useTranslation();
     const lang = (i18n.language || 'ru').slice(0, 2);
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+    const API_URL = import.meta.env.VITE_API_URL || 'https://fmmenuserver.onrender.com/';
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
